@@ -34,10 +34,11 @@ CityServe Service Operations & Revenue Analytics is a portfolio project built ar
 | Customer_Analysis | Customer-type analysis |
 | Data_Dictionary | Field definitions and business rules |
 | Dashboard_Calc | Hidden dashboard calculation support |
+| Power_Query_Guide | Reproducible Power Query steps and validation checks |
 
 ## Power Query guide
 
-See [Power_Query_Guide.md](Power_Query_Guide.md) for the data preparation steps and validation checks.
+The workbook includes a Power_Query_Guide sheet. See [Power_Query_Guide.md](Power_Query_Guide.md) for the same workflow in Markdown.
 
 ## Excel features used
 
@@ -49,7 +50,7 @@ See [Power_Query_Guide.md](Power_Query_Guide.md) for the data preparation steps 
 - Conditional formatting
 - KPI reporting and date-based analysis
 
-The workbook file currently stored in this repository does not preserve saved Power Query definitions or PivotTable objects. The guide documents how to reproduce the query workflow; save the query and pivot artifacts in the workbook if reviewers need to inspect or refresh them.
+The workbook file does not contain saved Power Query definitions or PivotTable objects. The guide documents the workflow; save the query and pivot artifacts in Excel if reviewers need to inspect or refresh them.
 
 ## Known workbook follow-up
 
