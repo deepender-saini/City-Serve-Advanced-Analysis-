@@ -1,97 +1,73 @@
 # CityServe — Advanced Excel Analytics
 
-## Project Overview
+## Project overview
 
-CityServe Service Operations & Revenue Analytics is an end-to-end Excel analytics portfolio project demonstrating practical business analysis, data cleaning, KPI reporting, operational analysis, and management dashboarding.
+CityServe Service Operations & Revenue Analytics is a portfolio project built around a synthetic service-business dataset. Power Query was used to prepare the data, and PivotTables and PivotCharts were used for analysis. The workbook contains an interactive dashboard and supporting analysis for bookings, revenue, service mix, cities, customers, status, and ratings.
 
-The project uses a synthetic/simulated service-business dataset and is intended for portfolio and learning purposes.
+## Business questions
 
-## Business Objective
-
-The analysis focuses on:
-
-- Booking volume and revenue performance
-- Monthly business trends
-- City-level performance
-- Service-type performance
-- Customer segmentation
-- Booking status and operational outcomes
-- Customer ratings
-- Completion performance
-- Data quality and validation
+- How do booking volume and revenue change by month?
+- Which cities and services contribute the most revenue?
+- How does customer mix differ by customer type?
+- How do booking outcomes relate to customer ratings?
+- Where should management focus capacity and service improvement?
 
 ## Dataset
 
 - Raw records: 40,010
-- Clean analytical bookings: 40,000
+- Deduplicated analytical records: 40,000
 - Duplicate Booking_ID records removed: 10
 - Period: FY 2026
 - Data type: Synthetic / simulated portfolio data
 
-## Excel Skills Demonstrated
-
-- Advanced Excel
-- Excel Tables
-- Data cleaning and validation
-- Power Query workflow
-- PivotTable / PivotChart analysis
-- SUMIFS / COUNTIFS / AVERAGEIFS
-- IF / IFERROR
-- Date-based analysis
-- Conditional formatting
-- KPI reporting
-- Dashboard design
-- Business insights and management storytelling
-
-## Interactive Dashboard
-
-The workbook includes an interactive management dashboard covering:
-
-- Total Bookings
-- Net Revenue
-- Average Rating
-- Completion Rate
-- Monthly Revenue Trend
-- Revenue by City
-- Revenue by Service Type
-- Booking Status Mix
-- Customer Mix
-- City filter
-- Service Type filter
-- Customer Type filter
-- Booking Status filter
-
-## Workbook Structure
+## Workbook contents
 
 | Sheet | Purpose |
 |---|---|
-| Dashboard | Interactive management dashboard |
+| Dashboard | Interactive KPI dashboard with City, Service Type, Customer Type, and Booking Status filters |
 | Raw_Data | Source dataset |
-| Clean_Data | Cleaned analytical dataset |
+| Clean_Data | Deduplicated analytical dataset |
 | Monthly_Analysis | Monthly booking and revenue analysis |
 | City_Analysis | City-level performance |
 | Service_Analysis | Service performance |
 | Status_Analysis | Booking status analysis |
 | Customer_Analysis | Customer-type analysis |
-| Power_Query_Guide | Data preparation methodology |
 | Data_Dictionary | Field definitions and business rules |
+| Dashboard_Calc | Hidden dashboard calculation support |
+| Power_Query_Guide | Reproducible Power Query steps and validation checks |
 
-## Key Business Questions
+## Power Query guide
 
-- Which months generate the highest revenue and booking volume?
-- Which cities contribute the most revenue?
-- Which services generate the greatest revenue?
-- How does customer mix differ across customer types?
-- What is the relationship between operational outcomes and customer ratings?
-- Where should management focus capacity and service-performance improvement?
+The workbook includes a Power_Query_Guide sheet. See [Power_Query_Guide.md](Power_Query_Guide.md) for the same workflow in Markdown.
+
+## Excel features used
+
+- Power Query for data preparation
+- PivotTables and PivotCharts for analysis
+- Excel tables and data validation
+- Formula-based calculations and summaries
+- Dashboard filters and charts
+- Conditional formatting
+- KPI reporting and date-based analysis
+
+The workbook file does not contain saved Power Query definitions or PivotTable objects. The guide documents the workflow; save the query and pivot artifacts in Excel if reviewers need to inspect or refresh them.
+
+## Known workbook follow-up
+
+The workbook still needs data and formula review before its revenue and completion-rate results should be treated as final:
+
+- 12 completed bookings have negative Service_Cost and Final_Amount values. Their Service_Cost totals -23,962,384. Verify them against the source; correct or exclude invalid values in the analytical data using a documented rule, and keep Raw_Data unchanged.
+- Clean_Data retains blanks in Area (817 records), Payment_Mode (439), and Average_Rating (203). Decide how to handle these fields and document that choice.
+- Completion Rate is affected by the Booking Status filter in the denominator. Update the dashboard and monthly calculations so the denominator counts all eligible bookings while honoring the other filters; the rate should not exceed 100%.
+- Data_Dictionary omits definitions for Year, Month_No, Month_Name, Duplicate_ID_Flag, Missing_Area_Flag, Missing_Payment_Flag, and Missing_Rating_Flag.
 
 ## Tools
 
-**Microsoft Excel | Power Query | PivotTables | PivotCharts | Advanced Excel | Data Analysis | Dashboarding**
+Microsoft Excel | Power Query | PivotTables | PivotCharts | Excel charts | Data analysis | Dashboarding
 
-## Portfolio Note
+## Portfolio note
 
-This is a **synthetic portfolio project** created to demonstrate analytics skills. It does not represent confidential company data, client data, or employment experience.
+This is a synthetic portfolio project created to demonstrate analytics skills. It does not represent confidential company data, client data, or employment experience.
 
 ## Author
 
