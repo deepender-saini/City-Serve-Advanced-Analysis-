@@ -2,7 +2,7 @@
 
 ## Project overview
 
-CityServe Service Operations & Revenue Analytics is a portfolio project built around a synthetic service-business dataset. The workbook contains an Excel dashboard and supporting analyses for bookings, revenue, service mix, cities, customers, status, and ratings.
+CityServe Service Operations & Revenue Analytics is a portfolio project built around a synthetic service-business dataset. Power Query was used to prepare the data, and PivotTables and PivotCharts were used for analysis. The workbook contains an interactive dashboard and supporting analysis for bookings, revenue, service mix, cities, customers, status, and ratings.
 
 ## Business questions
 
@@ -35,27 +35,34 @@ CityServe Service Operations & Revenue Analytics is a portfolio project built ar
 | Data_Dictionary | Field definitions and business rules |
 | Dashboard_Calc | Hidden dashboard calculation support |
 
-## Excel features
+## Power Query guide
 
+See [Power_Query_Guide.md](Power_Query_Guide.md) for the data preparation steps and validation checks.
+
+## Excel features used
+
+- Power Query for data preparation
+- PivotTables and PivotCharts for analysis
 - Excel tables and data validation
 - Formula-based calculations and summaries
 - Dashboard filters and charts
 - Conditional formatting
 - KPI reporting and date-based analysis
 
+The workbook file currently stored in this repository does not preserve saved Power Query definitions or PivotTable objects. The guide documents how to reproduce the query workflow; save the query and pivot artifacts in the workbook if reviewers need to inspect or refresh them.
+
 ## Known workbook follow-up
 
 The workbook still needs data and formula review before its revenue and completion-rate results should be treated as final:
 
 - 12 completed bookings have negative Service_Cost and Final_Amount values. Their Service_Cost totals -23,962,384. Verify them against the source; correct or exclude invalid values in the analytical data using a documented rule, and keep Raw_Data unchanged.
-- Clean_Data retains blanks in Area (817 records), Payment_Mode (439), and Average_Rating (203). Decide whether to fill these fields or retain them as unknown, and document that choice.
+- Clean_Data retains blanks in Area (817 records), Payment_Mode (439), and Average_Rating (203). Decide how to handle these fields and document that choice.
 - Completion Rate is affected by the Booking Status filter in the denominator. Update the dashboard and monthly calculations so the denominator counts all eligible bookings while honoring the other filters; the rate should not exceed 100%.
 - Data_Dictionary omits definitions for Year, Month_No, Month_Name, Duplicate_ID_Flag, Missing_Area_Flag, Missing_Payment_Flag, and Missing_Rating_Flag.
-- The dashboard filter helper lists in columns P:R are visible. Hide those support columns.
 
 ## Tools
 
-Microsoft Excel | Advanced Excel | Excel charts | Data analysis | Dashboarding
+Microsoft Excel | Power Query | PivotTables | PivotCharts | Excel charts | Data analysis | Dashboarding
 
 ## Portfolio note
 
